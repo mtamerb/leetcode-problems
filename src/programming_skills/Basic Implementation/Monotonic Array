@@ -1,0 +1,17 @@
+class Solution {
+    public boolean isMonotonic(int[] nums) {
+
+    boolean artan = true;
+    boolean azalan = true;
+
+    for (int i = 1; i < nums.length; i++) {
+        if (nums[i] > nums[i - 1]) {
+            azalan = false;
+        } else if (nums[i] < nums[i - 1]) {
+            artan = false;
+        }
+    }
+
+    return artan || azalan;
+}
+}
