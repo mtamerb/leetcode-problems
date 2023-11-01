@@ -1,0 +1,27 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+
+           if(s.length() == 0){
+               return t.charAt(0);
+           }
+
+           char[] chars = s.toCharArray();
+           char[] chart = t.toCharArray();
+
+            Arrays.sort(chars);
+            Arrays.sort(chart);
+
+            String yeniS = new String(chars);
+            String yeniT = new String(chart);
+
+            for(int i = 0; i < yeniS.length(); i++){
+                if(yeniS.charAt(i) != yeniT.charAt(i)){
+                    return yeniT.charAt(i);
+                }
+            }
+
+            int tlen = yeniT.length();
+
+            return yeniT.charAt(tlen -1);
+    }
+}
