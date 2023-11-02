@@ -1,0 +1,17 @@
+class Solution {
+    public int arraySign(int[] nums) {
+
+        double product = 1;
+        int len = nums.length;
+
+        for(double i : nums){
+            product *= i;
+
+            if(i == 0){
+                return 0;
+            }
+        }
+
+        return product > 0 ? 1 : -1;
+    }
+}
