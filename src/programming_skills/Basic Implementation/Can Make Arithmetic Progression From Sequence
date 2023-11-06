@@ -1,0 +1,16 @@
+class Solution {
+    public boolean canMakeArithmeticProgression(int[] arr) {
+
+        // mutlak fark ardısık ogelerde esit olmalı
+        Arrays.sort(arr);
+        var fark = Math.abs(arr[0] - arr[1]);
+
+        for(int i = 1; i < arr.length; i++){
+            if(Math.abs(arr[i - 1] - arr[i]) != fark){
+                 return false;
+            }
+        }
+
+        return true;
+    }
+}
