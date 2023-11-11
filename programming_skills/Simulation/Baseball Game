@@ -3,6 +3,7 @@ class Solution {
         List<Integer> record = new ArrayList<>();
 
         for(String s : operations){
+
             if(s.equals("D") && !record.isEmpty()){
                 record.add(record.get(record.size() - 1) * 2);
             }
