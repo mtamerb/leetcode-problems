@@ -1,0 +1,26 @@
+class Solution {
+    public int calPoints(String[] operations) {
+        List<Integer> record = new ArrayList<>();
+
+        for(String s : operations){
+            if(s.equals("D") && !record.isEmpty()){
+                record.add(record.get(record.size() - 1) * 2);
+            }
+            if(s.equals("C") && !record.isEmpty()){
+                record.remove(record.get(record.size() - 1));
+            }
+            if(s.equals("+") && record.size() >= 2){
+                record.add(record.get(record.size() - 1) + record.get(record.size() - 2));
+            }
+            if(s.matches("-?\\d+")){
+                record.add(Integer.parseInt(s));
+            }
+        }
+        int sum = 0;
+        for(int score : record){
+            sum += score;
+        }
+
+        return sum;
+    }
+}
