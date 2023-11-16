@@ -1,0 +1,12 @@
+class Solution {
+    public double average(int[] salary) {
+
+        int min = Arrays.stream(salary).min().orElse(Integer.MAX_VALUE);
+        int max = Arrays.stream(salary).max().orElse(Integer.MIN_VALUE);
+        int sum = Arrays.stream(salary).sum();
+
+        int excMinMax = sum - ( min + max);
+
+        return Math.round((double) excMinMax / (salary.length - 2) * 100000.0) / 100000.0;
+    }
+}
