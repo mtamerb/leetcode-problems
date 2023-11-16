@@ -1,0 +1,8 @@
+class Solution {
+    public int countOdds(int low, int high) {
+
+        int countOfOdd = (high + 1) / 2 - (low / 2);
+
+        return countOfOdd;
+    }
+}
